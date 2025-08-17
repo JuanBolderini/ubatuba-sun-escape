@@ -8,35 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Beach-inspired color palette */
+    --background: 35 25% 97%;
+    --foreground: 205 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 205 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 205 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Ocean blue primary */
+    --primary: 200 85% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Sunset orange secondary */
+    --secondary: 25 95% 55%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Warm sand muted */
+    --muted: 35 25% 90%;
+    --muted-foreground: 205 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Tropical green accent */
+    --accent: 155 65% 35%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 200 85% 45%;
 
-    --radius: 0.5rem;
+    /* Beach-themed custom colors */
+    --ocean-deep: 210 90% 35%;
+    --ocean-light: 195 75% 65%;
+    --sunset: 25 95% 55%;
+    --sunrise: 45 95% 65%;
+    --palm: 155 65% 35%;
+    --sand: 35 25% 85%;
+    --coral: 10 85% 65%;
+
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--ocean-deep)), hsl(var(--ocean-light)));
+    --gradient-sunset: linear-gradient(135deg, hsl(var(--sunset)), hsl(var(--sunrise)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--ocean-deep)), hsl(var(--primary)));
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -102,4 +121,71 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Beach-themed animations and utilities */
+@layer utilities {
+  .animate-fade-in {
+    @apply animate-[fadeIn_0.8s_ease-out];
+  }
+  
+  .animate-slide-up {
+    @apply animate-[slideUp_0.6s_ease-out];
+  }
+  
+  .animate-bounce-gentle {
+    @apply animate-[bounceGentle_2s_ease-in-out_infinite];
+  }
+  
+  .hover-float {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+  
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+  
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }

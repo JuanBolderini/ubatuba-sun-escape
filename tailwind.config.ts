@@ -52,6 +52,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Beach theme colors
+				ocean: {
+					deep: 'hsl(var(--ocean-deep))',
+					light: 'hsl(var(--ocean-light))'
+				},
+				sunset: 'hsl(var(--sunset))',
+				sunrise: 'hsl(var(--sunrise))',
+				palm: 'hsl(var(--palm))',
+				sand: 'hsl(var(--sand))',
+				coral: 'hsl(var(--coral))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
